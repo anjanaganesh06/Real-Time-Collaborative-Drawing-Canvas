@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Collaborative Canvas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div id="toolbar">
+    <button id="penBtn">Pen</button>
+    <button id="tool-brush">Brush</button>
+    <button id="tool-eraser">Eraser</button>
+    <input id="color" type="color" value="#000000" />
+    <input id="width" type="range" min="1" max="40" value="4" />
+    <button id="undo">Undo</button>
+    <button id="redo">Redo</button>
+    <span id="status">Connecting...</span>
+  </div>
+
+  <div id="canvas-wrap">
+    <!-- Base canvas where committed ops are drawn -->
+    <canvas id="base-canvas"></canvas>
+    <!-- Overlay for live strokes and cursors -->
+    <canvas id="overlay-canvas"></canvas>
+  </div>
+
+  <div id="users">
+    Users: <ul id="user-list"></ul>
+  </div>
+
+  <!-- ✅ Only load your main entry file as a module -->
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
